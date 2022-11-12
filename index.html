@@ -11,39 +11,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <p id="result"></p>
-        <table>
-            <tr>
-                <td><button onclick="clean()">C</button></td>
-                <td><button onclick="backn()"><</button></td>
-                <td><button onclick="clickk('/')">/</button></td>
-                <td><button onclick="clickk('*')">x</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="clickk('7')">7</button></td>
-                <td><button onclick="clickk('8')">8</button></td>
-                <td><button onclick="clickk('9')">9</button></td>
-                <td><button onclick="clickk('-')">-</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="clickk('4')">4</button></td>
-                <td><button onclick="clickk('5')">5</button></td>
-                <td><button onclick="clickk('6')">6</button></td>
-                <td><button onclick="clickk('+')">+</button></td>
-            </tr>
-            <tr>
-                <td><button onclick="clickk('1')">1</button></td>
-                <td><button onclick="clickk('2')">2</button></td>
-                <td><button onclick="clickk('3')">3</button></td>
-                <td rowspan="2"><button onclick="calcf()" style="height: 135px">=</button></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button onclick="clickk('0')"  style="width: 135px">0</button></td>
-                <td><button onclick="clickk('.')">.</button></td>
-            </tr>
-        </table>
-    </main>
+    <div class="container">
+        <main>
+            <p id="result"></p>
+            <table>
+                <tr>
+                    <td><button onclick="clean()">C</button></td>
+                    <td><button onclick="backn()"><</button></td>
+                    <td><button onclick="clickk('÷')">÷</button></td>
+                    <td><button onclick="clickk('x')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="clickk('7')">7</button></td>
+                    <td><button onclick="clickk('8')">8</button></td>
+                    <td><button onclick="clickk('9')">9</button></td>
+                    <td><button onclick="clickk('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="clickk('4')">4</button></td>
+                    <td><button onclick="clickk('5')">5</button></td>
+                    <td><button onclick="clickk('6')">6</button></td>
+                    <td><button onclick="clickk('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="clickk('1')">1</button></td>
+                    <td><button onclick="clickk('2')">2</button></td>
+                    <td><button onclick="clickk('3')">3</button></td>
+                    <td rowspan="2"><button onclick="calcf()" style="height: 135px">=</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="clickk('0')"  style="width: 135px">0</button></td>
+                    <td><button onclick="clickk('.')">.</button></td>
+                </tr>
+            </table>
+        </main>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

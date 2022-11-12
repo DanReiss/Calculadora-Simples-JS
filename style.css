@@ -7,6 +7,18 @@ body{
     background-color: #8FE3CF;
 }
 
+body, .container, html{
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 #result{
     display: flex;
     flex-flow: row wrap;
@@ -28,10 +40,14 @@ body{
 
 main{
     border: 6px #2B4865 solid;
-    width: 18em;
-    height: 27em;
+    width: 18rem;
+    height: 27rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     margin: auto;
-    margin-top: 30vh;
     background-color:  #256D85;
     border-radius: 15px;
     padding: 1.5em;
@@ -60,4 +76,11 @@ button:hover{
 button:active{
     background-color:white;
     transform: scale(0.95);
+}
+
+@media (max-width: 400px) {
+    .container{
+        width: 100vw;
+        height: 100vh;
+    }
 }

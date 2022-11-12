@@ -14,9 +14,15 @@ function backn(){
 }
 
 function calcf(){
-    var result = document.getElementById('result').innerHTML;
-    if(result){
-        document.getElementById('result').innerHTML = eval(result);
+    var resultcalc = String(document.getElementById('result').innerHTML);
+    if(resultcalc){
+        var converted = resultcalc.split('').map((symbol)=>{
+            if(symbol === "÷") return symbol = "/";
+            if(symbol === "x") return symbol = "*";
+            return symbol
+        }).join("");
+
+        document.getElementById('result').innerHTML = eval(converted);
     }else{
         document.getElementById('result').innerHTML = "nothing..."
     }
