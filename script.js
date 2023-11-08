@@ -1,29 +1,47 @@
+const resultDisplay = document.getElementById('result');
+let isResultDisplayed = false;
+
 function clickk(nn){
-    var number = document.getElementById('result').innerHTML;
-    document.getElementById('result').innerHTML = number + nn;
+    const actualCalc = resultDisplay.innerHTML;
+    if(Number(nn) && isResultDisplayed){
+        document.getElementById('result').innerHTML = nn;
+    }else{
+        resultDisplay.innerHTML = actualCalc + nn;
+    }
+
+    isResultDisplayed = false;
 }
 
 function clean(){
-    document.getElementById('result').innerHTML = "";
+    resultDisplay.innerHTML = "";
 }
 
 
 function backn(){
-    var result = document.getElementById('result').innerHTML;
-    document.getElementById('result').innerHTML = result.substring(0, result.length - 1)
+    const result = resultDisplay.innerHTML;
+    result = result.substring(0, result.length - 1);
 }
 
 function calcf(){
-    var resultcalc = String(document.getElementById('result').innerHTML);
+    const resultcalc = String(resultDisplay.innerHTML);
     if(resultcalc){
-        var converted = resultcalc.split('').map((symbol)=>{
+        const converted = resultcalc.split('').map((symbol)=>{
             if(symbol === "÷") return symbol = "/";
             if(symbol === "x") return symbol = "*";
             return symbol
         }).join("");
 
-        document.getElementById('result').innerHTML = eval(converted);
+        let result = String(eval(converted))
+
+        const [int, decimal] = result.split(".");
+
+        if(String(eval(converted)).length > 10){
+            result = `${int}.${decimal.slice(0, 4)}`
+        }
+
+        resultDisplay.innerHTML = result;
+        isResultDisplayed = true;
     }else{
-        document.getElementById('result').innerHTML = "nothing..."
+        resultDisplay.innerHTML = "nothing..."
     }
 }
